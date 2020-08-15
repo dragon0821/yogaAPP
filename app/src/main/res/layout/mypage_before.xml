@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.myfirst.mypage_be">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_return"
+        android:text=" 이전 "/>
+        <TextView
+            android:layout_marginLeft="135dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HT_master"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My page"
+        android:orientation="vertical"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="회원 명 : " />
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/e_name"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="  나이 : " />
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/e_old" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="   키 : " />
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/e_tall"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text=" 무게 : " />
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/e_weight"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="store"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/b_home"/>
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My page"
+            android:id="@+id/b_info"/>
+
+    </LinearLayout>
+</LinearLayout>
