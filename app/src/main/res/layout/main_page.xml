@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    tools:context="com.example.myfirst.main_page_yoga"
-    >
-    <LinearLayout
+    tools:context="com.example.myfirst.main_page">
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="250dp"
         android:layout_width="wrap_content"
-        android:layout_height="60dp">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/b_return"
-            android:text=" 이전 "/>
-        <TextView
-            android:layout_marginLeft="135dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HT_master"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:text="HT_master"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,9 +30,8 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="250dp"
-            android:src="@drawable/real_yoga"
-            android:layout_gravity="center">
-        </ImageView>
+            app:srcCompat="@drawable/real_yoga"
+            android:id="@+id/imageView"/>
 
         <Button
             android:id="@+id/main_n"

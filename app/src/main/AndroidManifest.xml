@@ -5,26 +5,25 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/yoga"
-        android:label="@string/app_name"
+        android:label="집에서 해보요가"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main_page_yoga">
+        <activity android:name=".main_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_page_pilates">
-        </activity>
-        <activity android:name=".main_page_fitness">
-        </activity>
+
         <activity android:name=".mypage_be">
         </activity>
         <activity android:name=".mypage_af">
         </activity>
-
+        <activity android:name=".training_list_yoga"></activity>
+        <activity android:name=".training_list_pilates"></activity>
+        <activity android:name=".training_list_fitness"></activity>
     </application>
 
 </manifest>

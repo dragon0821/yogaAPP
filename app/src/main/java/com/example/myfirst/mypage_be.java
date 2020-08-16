@@ -30,7 +30,7 @@ public class mypage_be extends AppCompatActivity {
         home_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(),mypage_be.class);//home 버튼으로 가는 버튼
+                Intent intent2 = new Intent(getApplicationContext(),main_page.class);//home 버튼으로 가는 버튼
                 startActivity(intent2);
             }
         });
@@ -38,7 +38,7 @@ public class mypage_be extends AppCompatActivity {
         info_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(getApplicationContext(),mypage_be.class);//my page로 돌가는 버튼
+                Intent intent3 = new Intent(getApplicationContext(),mypage_af.class);//my page로 돌가는 버튼
                 startActivity(intent3);
             }
         });
@@ -46,7 +46,7 @@ public class mypage_be extends AppCompatActivity {
         return_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent0 = new Intent(getApplicationContext(),mypage_be.class);//home 버튼을 돌아가는 버튼
+                Intent intent0 = new Intent(getApplicationContext(),main_page.class);//home 버튼을 돌아가는 버튼
                 startActivity(intent0);
             }
         }) ;
