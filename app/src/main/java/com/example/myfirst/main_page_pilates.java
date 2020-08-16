@@ -16,7 +16,7 @@ public class main_page_pilates extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_page_yoga);
+        setContentView(R.layout.main_page_pilates);
         next_b = (Button) findViewById(R.id.main_n);
         next_b.setOnClickListener(new View.OnClickListener() {
             @Override

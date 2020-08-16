@@ -16,13 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_page_fitness">
-        </activity>
         <activity android:name=".main_page_pilates">
         </activity>
-        <activity android:name=".mypage_af">
+        <activity android:name=".main_page_fitness">
         </activity>
         <activity android:name=".mypage_be">
+        </activity>
+        <activity android:name=".mypage_af">
         </activity>
 
     </application>
