@@ -43,7 +43,7 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/e_name"/>
+            android:id="@+id/eTName"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/e_old" />
+            android:id="@+id/eTOld" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/e_tall"
+            android:id="@+id/eTTall"
             />
     </LinearLayout>
     <LinearLayout
@@ -89,19 +89,33 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/e_weight"
+            android:id="@+id/eTWeight"
             />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button1"
-        style="?android:attr/buttonStyleSmall"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="store"
-        android:layout_marginTop="20dp"
-        />
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/buttonSave"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="store"
+            android:layout_marginTop="20dp"
+            />
+        <Button
+            android:id="@+id/buttonClear"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="clear"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_gravity="center"
