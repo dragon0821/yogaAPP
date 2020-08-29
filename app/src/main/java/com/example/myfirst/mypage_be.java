@@ -23,17 +23,11 @@ public class mypage_be extends AppCompatActivity {
 
         final ContactDBHelper dbHelper = new ContactDBHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
+        dbHelper.onStart(db);
         final Cursor cursor = db.rawQuery(ContactDBCtrct.SQL_SELECT, null) ;
 
         //init_tables();
 
-
-        /*cursor.moveToFirst();
-        for(int i=0;i<4;i++)
-        {
-            System.out.println(cursor.getString());
-            cursor.moveToNext();
-        }*/
 
         Button buttonSave = (Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(new Button.OnClickListener(){
@@ -98,16 +92,16 @@ public class mypage_be extends AppCompatActivity {
         info_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  if(cursor == null || cursor.getCount() ==0) {
+               if(cursor == null || cursor.getCount() ==0) {
                     //Intent intent3 = new Intent(getApplicationContext(),mypage_be.class);//my page로 돌가는 버튼
                     //startActivity(intent3);}
                     System.out.println("mypage_before로 갈거얌야야야야양");
                 }
                 else {
-                    //Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
-                    //startActivity(intent2);
+                    Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
+                    startActivity(intent2);
                     System.out.println("mypage_after로 갈거얌얌야먀야야양");
-                }*/
+                }
             }
         });
         //////////////////////////////////////////////////////////////////////////

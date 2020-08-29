@@ -19,14 +19,14 @@ public class ContactDBHelper extends SQLiteOpenHelper {
 
     }
     public void onStart(SQLiteDatabase db) {
-        db.execSQL(ContactDBCtrct.SQL_DROP_TBL) ;
+        //db.execSQL(ContactDBCtrct.SQL_DROP_TBL) ;
         db.execSQL(ContactDBCtrct.SQL_CREATE_TBL);
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // db.execSQL(ContactDBCtrct.SQL_DROP_TBL) ;
         onCreate(db);
     }
-    public void onDowngrade (SQLiteDatabase db, int oldVersion, int newVersion) {
-        onUpgrade(db, oldVersion, newVersion);
+    public void onDowngrade (SQLiteDatabase db) {
+        db.execSQL(ContactDBCtrct.SQL_DROP_TBL) ;
     }
 }

@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class main_page extends AppCompatActivity{
     public static int n = 0;
     public int flag1 = 0;
-
+    public int check = 0;
     Button home_b;
     Button info_b;
     Button return_b;
@@ -22,19 +22,19 @@ public class main_page extends AppCompatActivity{
     Button previous_b;
     ImageView imageView = null;
 
-
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
-        /////////////////////////////////////////////////////
+
         ContactDBHelper helper = new ContactDBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        helper.onStart(db);
+        if(check==0)
+        {helper.onStart(db);}
         final Cursor cursor = db.rawQuery(ContactDBCtrct.SQL_SELECT, null) ;
 
 
-        ////////////////////////////////////////////////////////////////
+
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setOnClickListener(new MyListener());
         next_b = (Button) findViewById(R.id.main_n);
@@ -92,13 +92,13 @@ public class main_page extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 ////////////////////////////////////////////////////////////
-               if(cursor == null || cursor.getCount() ==0){
+               if( cursor == null || cursor.getCount() ==0){
                     Intent intent3 = new Intent(getApplicationContext(),mypage_be.class);//my page로 돌가는 버튼
                 startActivity(intent3);
                    System.out.println(cursor.getCount() +"전전전전전   ~~~~~~~~~~~~~~~~");}
                 else {
-                  //  Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
-                    //startActivity(intent2);
+                  Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
+                    startActivity(intent2);
                    System.out.println("후후후후후후후훟~~~~~~~~~~~~~~~~~~");
                 }
                 ///////////////////////////////////////////
@@ -106,6 +106,7 @@ public class main_page extends AppCompatActivity{
         });
 
     }
+
     class MyListener implements View.OnClickListener {
 
         @Override
