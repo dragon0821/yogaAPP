@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class main_page extends AppCompatActivity{
+
     public static int n = 0;
     public int flag1 = 0;
     public int check = 0;
@@ -27,17 +28,27 @@ public class main_page extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
 
+        //밑에 함수 전까지의 선언들은 onCreate가 아니면 오류가 나옴
         ContactDBHelper helper = new ContactDBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        if(check==0)
+        if(check==0)//어플을 처음 깔았을때만 table이 만들어진다.
         {helper.onStart(db);}
         final Cursor cursor = db.rawQuery(ContactDBCtrct.SQL_SELECT, null) ;
 
+        declare();
+        buttons(cursor);
 
-
+    }
+    void declare () {
         imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setOnClickListener(new MyListener());
+        imageView.setOnClickListener(new MyListener()); // imageview 클릭시에 event처리를 하기 위함
         next_b = (Button) findViewById(R.id.main_n);
+        previous_b = (Button) findViewById(R.id.main_p);
+        home_b = (Button) findViewById(R.id.b_home);
+        info_b = (Button) findViewById(R.id.b_info);
+    }
+    void buttons(final Cursor cursor){
+        //이미지만 바꾸기 위함
         next_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,10 +65,9 @@ public class main_page extends AppCompatActivity{
                     imageView.setImageResource(R.drawable.real_yoga);
                     n = 0;
                 }
-                System.out.println("n is "+n);
             }
         });
-        previous_b = (Button) findViewById(R.id.main_p);
+
         previous_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,12 +84,11 @@ public class main_page extends AppCompatActivity{
                     imageView.setImageResource(R.drawable.pilates);
                     n = 1;
                 }
-                System.out.println("n is "+n);
             }
         });
         ///////////////////////////////////////////////////////////////////////////////
         //밑에 있는 거는 모든 페이지에서 필요한 버튼들 2,3,0
-        home_b = (Button) findViewById(R.id.b_home);
+
         home_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,24 +96,21 @@ public class main_page extends AppCompatActivity{
                 startActivity(intent2);
             }
         });
-        info_b = (Button) findViewById(R.id.b_info);
+
         info_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ////////////////////////////////////////////////////////////
-               if( cursor == null || cursor.getCount() ==0){
-                    Intent intent3 = new Intent(getApplicationContext(),mypage_be.class);//my page로 돌가는 버튼
-                startActivity(intent3);
-                   System.out.println(cursor.getCount() +"전전전전전   ~~~~~~~~~~~~~~~~");}
-                else {
-                  Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
-                    startActivity(intent2);
-                   System.out.println("후후후후후후후훟~~~~~~~~~~~~~~~~~~");
+                if( cursor == null || cursor.getCount() ==0) //DB에 기록이 없으면 기록 저장을 위한 page DB에 기록이 있으면 기록 저장된 페이지로
+                {
+                    Intent intent3 = new Intent(getApplicationContext(), mypage_be.class);
+                    startActivity(intent3);
                 }
-                ///////////////////////////////////////////
+                else {
+                    Intent intent2 = new Intent(getApplicationContext(),mypage_af.class);
+                    startActivity(intent2);
+                }
             }
         });
-
     }
 
     class MyListener implements View.OnClickListener {
